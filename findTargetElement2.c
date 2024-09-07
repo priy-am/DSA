@@ -61,5 +61,7 @@ int main(int argc, char const *argv[])
         printf("Element doesn't exit\n");
     }
 
+    free(array);
+
     return 0;
 }
