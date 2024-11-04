@@ -31,6 +31,11 @@ public:
         ptr->next = newNode;
     }
 
+    //shorted list
+    void shorted(){
+        
+    }
+
     //remove duplicate 
 
     //display
