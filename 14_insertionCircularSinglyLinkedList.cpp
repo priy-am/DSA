@@ -24,14 +24,15 @@ public:
         Node* newNode = new Node(data);
         if(head == nullptr){
             head = newNode;
+            head->next = head;
             return;
         }
         Node* ptr = head;
         while(ptr->next != head){
             ptr = ptr->next;
         }
-        ptr->next = newNode;
         newNode->next = head;
+        ptr->next = newNode;
         head = newNode;
     }
 
@@ -40,6 +41,7 @@ public:
         Node* newNode = new Node(data);
         if(head == nullptr){
             head = newNode;
+            head->next = head;
             return;
         }
         Node* ptr = head;
@@ -71,9 +73,10 @@ public:
     //display
     void display(){
         Node* ptr = head;
-        while( ptr->next == head){
+        do{
             cout<<ptr->data<<" ";
-        }
+            ptr = ptr->next;
+        }while( ptr != head);
         cout<<endl;
     }
 };
