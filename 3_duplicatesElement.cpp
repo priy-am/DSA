@@ -1,3 +1,4 @@
+// Given a sorted array of n elements, possibly with duplicates, find the number of occurrences of the target element
 #include <iostream>
 #include <cstdlib>
 
