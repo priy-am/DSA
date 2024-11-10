@@ -18,7 +18,7 @@ public:
     LinkedList() : head(nullptr) {} // constructor
 
     //insert the element
-    void insertAtEnd(int data){
+    void insert(int data){
         Node* newNode = new Node(data);
         if(head == nullptr){
             head = newNode;
@@ -31,21 +31,30 @@ public:
         ptr->next = newNode;
     }
 
-    //shorted list
-    void shorted(){
-        
+    void removeDuplicates(){
+        if(!head){
+            return;
+        }
+        Node* ptr = head;
+        while(ptr && ptr->next){
+            if(ptr->data == ptr->next->data){
+                Node* ptr1 = ptr->next;
+                ptr->next = ptr1->next;
+                delete ptr1;
+            }else{
+                ptr = ptr->next;
+            }
+        }
     }
-
-    //remove duplicate 
 
     //display
     void display(){
         Node* ptr = head;
         while(ptr!=nullptr){
-            cout<<ptr->data;
+            cout<<ptr->data<<",  ";
             ptr = ptr->next;
         }
-        cout<<"Null";
+        cout<<"Null\n";
     }
 
     // deconstructor
@@ -61,6 +70,26 @@ public:
 
 int main(int argc, char const *argv[])
 {
+    LinkedList list;
+
+    list.insert(1);
+    list.insert(1);
+    list.insert(2);
+    list.insert(2);
+    list.insert(3);
+    list.insert(3);
+    list.insert(3);
+    list.insert(3);
+    list.insert(4);
+    list.insert(4);
+
+    cout << "Original List: ";
+    list.display();
+
+    list.removeDuplicates();
+
+    cout << "List after removing duplicates: ";
+    list.display();
 
     return 0;
 }
