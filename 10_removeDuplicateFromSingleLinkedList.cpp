@@ -51,7 +51,7 @@ public:
     void display(){
         Node* ptr = head;
         while(ptr!=nullptr){
-            cout<<ptr->data<<",  ";
+            cout<<ptr->data<<"->  ";
             ptr = ptr->next;
         }
         cout<<"Null\n";
