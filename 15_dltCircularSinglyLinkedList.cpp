@@ -5,15 +5,12 @@
 
 #include <iostream>
 using namespace std;
-
 struct Node{
     int data;
     Node* next;
     Node(int val):data(val),next(nullptr){}
 };
-
-class LinkedList
-{
+class LinkedList{
 private:
     Node* head;
 public:
@@ -34,8 +31,6 @@ public:
         newNode->next = head;
         
     }
-
-    //dltAtFront
     void dltAtFront(){
         if(head->next == head){
             delete head;
@@ -51,7 +46,6 @@ public:
         last->next = head;
         delete temp;
     }
-    //dltAtEnd
     void dltAtEnd(){
         Node*ptr = head;
         if(!head){
@@ -70,8 +64,6 @@ public:
         ptr->next = head;
         delete temp;
     }
-
-    //dltPos
     void dltPos(int pos){
         Node* ptr = head;
         if(pos == 1){
@@ -90,8 +82,6 @@ public:
         delete ptr1;
 
     }
-    
-    //display
     void display(){
         if(!head){
             cout<<"List is empty\n";

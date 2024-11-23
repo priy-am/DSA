@@ -20,8 +20,6 @@ public:
     bool isEmpty(){
         return front == -1|| front>rear;
     }
-
-
     void display(){
         if(isEmpty()){
             cout<<"Queue is empty!\n";
@@ -32,7 +30,6 @@ public:
         }
         cout<<endl;
     }
-
     void enqueue(int val){
         if(isfull()){
             cout<<"Queue overflow! Cannot enqueue " << val << endl;
@@ -45,7 +42,6 @@ public:
         queue[rear]= val;
         display();
     }
-
     void dequeue(){
         if(isEmpty()){
             cout<<"Queue is underflow! cannot dequeue\n";
@@ -54,9 +50,6 @@ public:
         front++;
         display();
     }
-
-
-
     ~simpleQueue(){
         delete[] queue;
     }

@@ -2,14 +2,12 @@
 
 #include <iostream>
 using namespace std;
-
 struct  Node
 {
     int data;
     Node* next;
     Node(int val):data(val),next(nullptr){}
 };
-
 class StackByLinkedList
 {
 private:
@@ -19,7 +17,6 @@ public:
     bool isEmpty(){
         return top == nullptr;
     }
-
     void display(){
         Node* current = top;
         if(isEmpty()){
@@ -45,7 +42,6 @@ public:
         top = top->next;
         free(current);
     }
-
     void push(int data){
         Node* newNode = new Node(data);
         if(isEmpty()){
@@ -55,7 +51,6 @@ public:
         newNode->next = top;
         top = newNode;
     }
-
 };
 
 int main(int argc, char const *argv[])

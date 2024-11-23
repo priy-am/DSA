@@ -12,10 +12,8 @@ struct Node
 {
     int data;
     Node* next;
-
     Node(int val):data(val),next(nullptr){}   //constructor
 };
-
 
 class LinkedList
 {
@@ -23,7 +21,6 @@ private:
     Node* head;
 public:
     LinkedList():head(nullptr){}   //constructor
-
     //for insert the elemnt 
     void insertAtFront(int data){
         Node* newNode = new Node(data);
@@ -43,7 +40,6 @@ public:
         ptr->next = newNode;
         
     }
-
 //delete from the front
     void deleteAtFront(){
         if(head == nullptr){
@@ -54,7 +50,6 @@ public:
         head = head->next;
         delete temp;
     }
-
     void deleteAtEnd(){ 
         if(head == nullptr){
             cout<<"List is empty\n";
@@ -65,7 +60,6 @@ public:
             head == nullptr;
             return;
         }
-
         Node*ptr = head;
         while(ptr->next->next != nullptr){
             ptr= ptr->next;
@@ -73,7 +67,6 @@ public:
         delete ptr->next;
         ptr->next = nullptr;
     }
-
     void deleteAtSpecificPosition(int pos){
         if(head == nullptr){
             cout<<"List is empty\n";
@@ -87,9 +80,7 @@ public:
         Node* dltnode = ptr->next;
         ptr->next = dltnode->next;
         delete dltnode;
-
     }
-
 //display
     void display() const{
         Node* ptr = head;

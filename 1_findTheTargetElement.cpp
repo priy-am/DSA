@@ -20,11 +20,6 @@ int main(int argc, char const *argv[])
         cin>>array[i];
     }
 
-// //for debug displaying the array
-//     for (int i = 0; i < len; i++){
-//         cout<<array[i];
-//     }
-
     cout<<"Enter the Target Element that you find\t";
     cin>>target;
 

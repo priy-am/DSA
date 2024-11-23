@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <cstdlib>
-
 using namespace std;
 
 void swap(int *a, int *b) {
@@ -10,7 +9,6 @@ void swap(int *a, int *b) {
     *a = *b;
     *b = temp;
 }
-
 int main() {
     int target, len;
     cout << "Enter the length of array: ";

@@ -14,7 +14,6 @@ struct Node
     Node* next;
     //constructor of node
     Node(int val): data(val), next(nullptr){}
-
 };
 
 class LinkedList
@@ -22,8 +21,7 @@ class LinkedList
 private:
     Node* head;
 public:
-    //constructor ;- use for initialize the val
-    LinkedList():head(nullptr){}
+    LinkedList():head(nullptr){}     //constructor ;- use for initialize the val
 
     //insert in the front
     void insertAtFront(int val){
@@ -31,7 +29,6 @@ public:
         newNode->next = head;
         head = newNode;
     }
-
     //insert at end
     void insertAtEnd(int val){
         Node* newNode = new Node(val);
@@ -45,7 +42,6 @@ public:
         }
         ptr->next = newNode;
     }
-
     //insert at any specific postion 
     void insertAtSpecificPosition(int val, int pos){
         Node* newnode = new Node(val);

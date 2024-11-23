@@ -1,7 +1,6 @@
 // Write a program to implement Circular Queue using arrays (Show all the operations like insertion, deletion and display)
 #include <iostream>
 using namespace std;
-
 class circularQueue
 {
 private:
@@ -11,7 +10,6 @@ public:
     circularQueue(int s):size(s),front(-1),rear(-1){
         queue = new int[size];
     }
-
     bool isFull() {
         return (front == 0 && rear == size-1)|| (rear +1 == front );
     }
@@ -31,11 +29,9 @@ public:
         }
         if(rear == size-1){
             rear = 0;
-        }else{
-        rear++;
         }
+        rear = (rear + 1) % size;
         queue[rear] = val;
-
     }
 
     void dequeue(){
@@ -43,12 +39,13 @@ public:
             cout << "Queue is empty! Cannot dequeue." << endl;
             return;
         }
-        if(front == size-1){
-            front = 0;
+        if (front == rear) { // If only one element is left
+            front = -1;
+            rear = -1;
+        } else {
+            front = (front + 1) % size; // Wrap around if needed
         }
-        front++;
     }
-
     void display(){
         if(isEmpty()){
             cout<<"queue is empty!\n";

@@ -1,22 +1,18 @@
 // Write a program to remove duplicates from the sorted linked list
 #include <iostream>
 using namespace std;
-
 struct Node
 {
     int data;
     Node *next;
     Node(int val) : data(val), next(nullptr) {} // constructor
 };
-
 class LinkedList
 {
 private:
     Node *head;
-
 public:
     LinkedList() : head(nullptr) {} // constructor
-
     //insert the element
     void insert(int data){
         Node* newNode = new Node(data);
@@ -30,7 +26,6 @@ public:
         }
         ptr->next = newNode;
     }
-
     void removeDuplicates(){
         if(!head){
             return;
@@ -46,7 +41,6 @@ public:
             }
         }
     }
-
     //display
     void display(){
         Node* ptr = head;
@@ -56,7 +50,6 @@ public:
         }
         cout<<"Null\n";
     }
-
     // deconstructor
     ~LinkedList(){
         Node *temp;
@@ -71,7 +64,6 @@ public:
 int main(int argc, char const *argv[])
 {
     LinkedList list;
-
     list.insert(1);
     list.insert(1);
     list.insert(2);
@@ -82,14 +74,10 @@ int main(int argc, char const *argv[])
     list.insert(3);
     list.insert(4);
     list.insert(4);
-
     cout << "Original List: ";
     list.display();
-
     list.removeDuplicates();
-
     cout << "List after removing duplicates: ";
     list.display();
-
     return 0;
 }

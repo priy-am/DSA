@@ -4,14 +4,12 @@
 // c. at any specific position
 #include <iostream>
 using namespace std;
-
 struct Node {
     int data;
     Node* prev;
     Node* next;
     Node(int data):data(data),prev(nullptr),next(nullptr){}
 };
-
 class LinkedList 
 {
 private:
@@ -32,7 +30,6 @@ public:
         newNode->prev = ptr;
         ptr->next = newNode;
     }
-
     //deletion at front
     void dltAtFront(){
         if(head == nullptr){
@@ -46,7 +43,6 @@ public:
         }
         delete temp;
     }
-
 //deletion at end
     void dltAtEnd(){
          if (head == nullptr) {  // Added check for empty list
@@ -65,17 +61,13 @@ public:
         Node* temp = ptr->next;
         ptr->next = nullptr;
         delete temp;
-
     }
-
     // delete at specific pos
     void dltPos(int pos){
         if (head == nullptr) {
             cout << "List is empty, no nodes to delete.\n";
             return;
         }
-
-
         if(pos == 1){
             dltAtFront();
             return;
@@ -93,7 +85,6 @@ public:
         temp->next->prev = ptr;
         delete(temp);
     }
-
     //display
     void display(){
         Node* ptr= head;
@@ -148,10 +139,8 @@ int main(int argc, char const *argv[])
         default: cout<<"Invalid input\n";
             break;
         }
-
         cout<<"Do you want to try agin:- y for yes , n for no:- ";
         cin>>want;
-
     } while (want == 'y'||want == 'Y');
     return 0;
 }

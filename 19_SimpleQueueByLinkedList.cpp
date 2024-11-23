@@ -1,7 +1,6 @@
 // Write a program to implement Simple Queue using linked lists. (Show all the operations like insertion, deletion and display)
 #include<iostream>
 using namespace std;
-
 struct Node{
     int data;
     Node* next;
@@ -19,7 +18,6 @@ public:
     bool isEmpty(){
         return front == nullptr;
     }
-
     void enqueue(int val){
         Node* newNode = new Node(val);
         if(isEmpty()){
@@ -30,7 +28,6 @@ public:
         rear->next = newNode;
         rear = newNode;
     }
-
     void dequeue(){
         if(isEmpty()){
             cout<<"queue is underflow! can't dequeue\n";
@@ -43,7 +40,6 @@ public:
         }
         delete temp;
     }
-
     void display(){
         if(isEmpty()){
             cout<<"Queue is empty\n";

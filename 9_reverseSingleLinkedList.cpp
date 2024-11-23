@@ -1,7 +1,6 @@
 // Q9. Write a program to reverse a singly linked list
 #include <iostream>
 using namespace std;
-
 struct Node
 {
     int data;
@@ -16,7 +15,6 @@ private:
     Node* head;
 public:
     LinkedList():head(nullptr){}    //constructor
-
     //insert at the end for the making linked list
     void insertAtEnd(int value){
         Node* newNode = new Node(value);
@@ -30,7 +28,6 @@ public:
         }
         ptr->next = newNode;
     }
-
     //reverse 
     void reverse(){
         Node* prev = nullptr;
@@ -45,7 +42,6 @@ public:
         }
         head = prev;
     }
-
     //display
     void display(){
         Node* ptr = head;
@@ -66,7 +62,6 @@ public:
         } 
     }
 };
-
 
 int main(int argc, char const *argv[])
 {

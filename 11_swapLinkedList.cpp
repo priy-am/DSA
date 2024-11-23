@@ -2,22 +2,17 @@
 
 #include <iostream>
 using namespace std;
-
 struct Node{
     int data;
     Node *Next;
     Node(int val) : data(val), Next(nullptr) {}
 };
-
 class LinkedList
 {
 private:
     Node *head;
-
 public:
     LinkedList() : head(nullptr) {}
-
-    // insert
     void append(int data){
         Node *newNode = new Node(data);
         if (head == nullptr){
@@ -30,37 +25,31 @@ public:
         }
         ptr->Next = newNode;
     }
-
     // swap the linked list
     void swapNodes(int x, int y){
         if (x == y) return;
-
         Node *prevX = nullptr, *currX = head;
         while (currX && currX->data != x) {
             prevX = currX;
             currX = currX->Next;
         }
-
         Node *prevY = nullptr, *currY = head;
         while (currY && currY->data != y) {
             prevY = currY;
             currY = currY->Next;
         }
-
         if (!currX || !currY) return; //return when the element not find there
         if (prevX) {
             prevX->Next = currY;
         } else {
             head = currY;
         }
-
         if (prevY) {
             prevY->Next = currX;
         } else {
             head = currX;
         }
-
-         Node* temp = currY->Next;
+        Node* temp = currY->Next;
         currY->Next = currX->Next;
         currX->Next = temp;
     }
@@ -103,6 +92,5 @@ int main(int argc, char const *argv[])
     list.swapNodes(x, y);
     cout << "Display after swap the list \n";
     list.display();
-
     return 0;
 }

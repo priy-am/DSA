@@ -1,7 +1,6 @@
 // Write a program to implement stack using array (Show all the operations like insertion, deletion and display)
 #include <iostream>
 using namespace std;
-
 class stack
 {
 private:
@@ -44,7 +43,6 @@ public:
         arr[++top] = val;
         
     }
-
     //pop
     int pop(){
         if(isEmpty()){
